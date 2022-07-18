@@ -50,7 +50,7 @@ def handle_text(message):
         bot.send_message(message.chat.id, 'Your message is: ' + msg)
 
 
-# loop function, which chwcking weather and report to telegram in case of rain
+# loop function, which checking weather and report to telegram in case of rain
 def loop_weather_check(chat_id):
     global thread_exit_flag
     while not thread_exit_flag:
