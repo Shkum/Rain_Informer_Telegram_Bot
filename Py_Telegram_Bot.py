@@ -3,7 +3,7 @@ import telebot
 from Weather import Weather
 import threading
 
-# Создаем экземпляр бота
+# Create bot instance
 bot = telebot.TeleBot('5433931992:AAG7ykhximKcgFz-SY6-zjNenTVQ7X4h0dQ')
 weather = Weather()
 
@@ -12,7 +12,7 @@ command_flag = False
 thread_exit_flag = False
 
 
-# Функция, обрабатывающая команду /start
+# Function handling 'start' command
 @bot.message_handler(commands=["start"])
 def start(m):
     global command_flag
@@ -27,7 +27,7 @@ def stop(m):
     thread_exit_flag = True
 
 
-# Получение сообщений от юзера
+# Getting message from user
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     global command_flag
@@ -50,7 +50,7 @@ def handle_text(message):
         bot.send_message(message.chat.id, 'Your message is: ' + msg)
 
 
-# функуия котороя запускается в цикле в отдельном потоке на проверку погоды каждые N секунд и вывод если дождь
+# loop function, which chwcking weather and report to telegram in case of rain
 def loop_weather_check(chat_id):
     global thread_exit_flag
     while not thread_exit_flag:
@@ -64,5 +64,5 @@ def loop_weather_check(chat_id):
     bot.send_message(chat_id, 'Exit monitoring...')
 
 
-# Запускаем бота
+# start bot
 bot.polling(none_stop=True, interval=0)
