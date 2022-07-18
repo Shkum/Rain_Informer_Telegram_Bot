@@ -5,6 +5,7 @@ import threading
 
 # Create bot instance
 bot = telebot.TeleBot('5433931992:AAG7ykhximKcgFz-SY6-zjNenTVQ7X4h0dQ')
+# create weather class instance
 weather = Weather()
 
 command_flag = False
