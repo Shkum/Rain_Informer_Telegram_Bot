@@ -42,7 +42,7 @@ def handle_text(message):
             bot.send_message(message.chat.id, wtr[0])
             bot.send_message(message.chat.id, 'Rain: ' + str(wtr[1][1]))
             command_flag = False
-            x = threading.Thread(target=loop_weather_check(message.chat.id), args=(1,))  # запускаем цикл в отдельном потоке на проверку погоды и передает функции id чата для ответе в канал
+            x = threading.Thread(target=loop_weather_check(message.chat.id), args=(1,))  # starting loop in separate thread
             x.start()
         else:
             bot.send_message(message.chat.id, 'City not found or connection error...')
