@@ -3,8 +3,8 @@ import telebot
 from Weather import Weather
 import threading
 
-# Create bot instance UPDATE IT
-bot = telebot.TeleBot('5433931992:AAG7ykhximKcgFz-SY6-zjNenTVQ7X4h0d')
+# Create bot instance
+bot = telebot.TeleBot('5433931992:AAG7ykhximKcgFz-SY6-zjNenTVQ7X4h0dQ')
 # create weather class instance
 weather = Weather()
 
