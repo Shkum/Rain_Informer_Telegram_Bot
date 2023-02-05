@@ -2,7 +2,7 @@ from pyowm import OWM
 
 
 class Weather:
-    owm = OWM('6447d90ffd2f57c8d4fadf48e2127c01')
+    owm = OWM('6447d90ffd2f57c8d4fadf48e2127c0') # UPDATE OWM KEY
     exit_thread_flag = False
 
     def __init__(self, location='Odessa'):
